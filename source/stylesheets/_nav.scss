@@ -25,7 +25,7 @@
 $glass: rgba($color-body-bg, 0.8);
 
 .nav-container {
-  // position: relative;    
+  // position: relative;   
 
   @include screen-sm {
     z-index: 100;
@@ -43,7 +43,9 @@ $glass: rgba($color-body-bg, 0.8);
 ._nav {
   // position: relative;
   margin: 0;
-  top: 25vh;
+  top: 28vh; 
+  opacity: 0;
+  @extend %ease;
   counter-reset: nav;
   z-index: 300;
   position: relative;

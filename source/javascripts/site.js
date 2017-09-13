@@ -1,11 +1,10 @@
 
-// This is where it all goes :)
 
 
-// need to intercept hashes
-
-// #location, #picture name, #video
-
+var isMobile = false;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  isMobile = true;
+}
 
 
 // 
@@ -14,33 +13,33 @@
 // - mooified to scroll left/right based on responsive size
 // 
 
-function horizontalScroll() {
+function hScroll(target) {
   var scrollElement = '.section-container';
+
+  $target = $(target);
+  // offset = $this.data('offset-scroll') || 0; // <... data-offset-scroll="400"> 
+  targetOffset = $target.offset().left;
+  offset = -300;
+
+  // console.log('start hScroll to ' , target)
+
+  if( typeof $target.offset() !== "undefined") {
+    // window.location.hash = target;
+    $(scrollElement).animate({
+      'scrollLeft': $target.offset().left + $(scrollElement).scrollLeft() + offset
+    }, 600, 'swing', function() {
+      window.location.hash = target;
+
+      // console.log('finished hScroll')
+    });
+  }
+}
+function horizontalScroll() {
   
   // Smooth scrolling for internal links
   $("a[href^='#']").click(function(event) {
     event.preventDefault();
-
-    var $this = $(this),
-    target = this.hash,
-    $target = $(target);
-    // offset = $this.data('offset-scroll') || 0; // <... data-offset-scroll="400"> 
-    targetOffset = $target.offset().left;
-    offset = -300;
-
-    // console.log('start hScroll')
-
-    if( typeof $target.offset() !== "undefined") {
-      // window.location.hash = target;
-      $(scrollElement).animate({
-        'scrollLeft': $target.offset().left + $(scrollElement).scrollLeft() + offset
-      }, 500, 'swing', function() {
-        event.preventDefault();
-        window.location.hash = target;
-
-        // console.log('finished hScroll')
-      });
-    }
+    hScroll(this.hash);
   });
 }
 
@@ -51,19 +50,19 @@ function verticalScroll() {
   $("a[href^='#']").click(function(event) {
     event.preventDefault();
 
-    var $this = $(this),
-    target = this.hash,
-    $target = $(target);
-    targetOffset = $target.offset().top;
-    offset = -70;
+    // var $this = $(this),
+    var target = this.hash,
+        $target = $(target),
+        targetOffset = $target.offset().top,
+        offset = 0; //-70;
 
-    console.log('start vScroll')
+    // console.log('start vScroll')
 
     if( typeof $target.offset() !== "undefined") {
       // window.location.hash = target;
       $(scrollElement).animate({
         'scrollTop': $target.offset().top + offset
-      }, 500, 'swing', function() {
+      }, 600, 'swing', function() {
         event.preventDefault();
         window.location.hash = target;
         event.preventDefault();
@@ -74,10 +73,6 @@ function verticalScroll() {
 }
 
 
-var isMobile = false;
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  isMobile = true;
-}
 
 
 function resize() {
@@ -102,8 +97,23 @@ function resize() {
 
 $(document).ready(function() {
 
-
+  // calculates scrolling and window sizes
   resize();
+
+  // loads the nav in all pretty.
+  // also bc resize(); puts the nav in the middle
+  $('._nav').css({opacity: 1})
+
+
+  // horizontally scroll if hash exists
+
+  let hash = location.hash;
+  console.log(hash);
+
+  if(hash !== '') {
+    console.log('hash scroll horizontally');
+    hScroll(hash);
+  }
 
   // 
   // sticky nav
@@ -118,12 +128,23 @@ $(document).ready(function() {
           .setClassToggle("#nav", "--pinned") // add class toggle
           .addTo(stickyController);
 
-
-
 });
 
 
 jQuery(window).on('resize', _.throttle(resize, 500));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

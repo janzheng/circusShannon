@@ -2,22 +2,17 @@
 
 # Getting Started 
 
-This project is set up as a deliverable, where the landing page and style guides are two parts of this deliverable. Following NDA restrictions, the entire site is stored and generated locally, so no host is necessary, but still has the nice-to-haves of a local server, like SASS, bundling, plugins, kramdown, and so on.
+This project is Shannon McKenna's personal circus performance and portfolio site. It's built on Middleman. Feel free to peruse, clone, and use it for your own benefit.
 
-The documentation is written in a combination of ERB, Kramdown (variant of Markdown), and HTML, supported by SCSS.
-
+The CSS is built off of a home-grown framework called [StyleCoeur](github.com/janzheng/stylecoeur).
 
 
 ----
 
 todo
-- hash intercept for URL
-- loader to prevent ugly menu pop
-- professional services list . what can yuo hire Shannon for
-- something cute at the rightmost area
-- mobile vertical scroller
 - photos
-- form sender
+
+- todo w/ shannon: professional services list . what can yuo hire Shannon for
 ----
 
 
@@ -45,8 +40,19 @@ Compiling the documentation:
 Middleman can watch for updates to the source code and build as the source is updated. Again, use the middleman build as a backbone for your React App; whether you want to keep the Middleman static site as a purely marketing site or eventually folding it into your React App is up to you.
 
 
+Deploying to Github uses [middleman deploy](https://github.com/middleman-contrib/middleman-deploy):
+
+~~~
+  bundle exec middleman build [--clean]
+  bundle exec middleman deploy [--build-before]
+~~~
 ## Design
 
 The main `circusshannon.com` site is horizontally scrolling, which isn't really good for mobile sites. Instead, any screens -sm and above will be horizontally scrolling, while -xs will become vertically scrolling. Grids can support this kind of reflowing.
 
 The content will be organized into `<sections />` and will be completely display agnostic.
+
+
+~ Jan
+
+

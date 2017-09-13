@@ -11,8 +11,8 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Middleman Gems
 gem "middleman", "~> 4.1"
-gem "middleman-blog"
-gem 'middleman-search' # https://github.com/manastech/middleman-search
+# gem "middleman-blog"
+# gem 'middleman-search' # https://github.com/manastech/middleman-search
 
 gem 'middleman-aria_current' # https://github.com/manastech/middleman-search
 
@@ -20,3 +20,5 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
+
+gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
