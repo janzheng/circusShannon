@@ -1804,15 +1804,30 @@ body {
     .section-container {
       width: 100%;
       overflow-x: hidden;
-      padding: 32px;
       padding-bottom: 96px; }
       .section-container section {
-        padding-top: 48px; } }
+        padding: 32px;
+        padding-top: 48px; }
+      .section-container #home {
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        top: -210px;
+        z-index: 0; }
+        .section-container #home > div {
+          min-height: 300px;
+          height: 1000px; }
+        .section-container #home .bg-img {
+          background-image: url("../images/bg3.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          opacity: 0.14; } }
   @media (min-width: 768px) {
     .section-container {
       padding-left: 0;
       display: grid;
-      grid-gap: 45%;
+      grid-gap: 25%;
       grid-template-areas: 'home about photos videos booking contact friends';
       grid-template-rows: 1fr;
       grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
@@ -1824,16 +1839,44 @@ body {
         overflow-x: hidden;
         padding-right: 48px;
         padding-bottom: 128px;
+        position: relative;
         min-width: 460px; }
+      .section-container #home {
+        min-width: 850px; }
+        .section-container #home .bg-img {
+          background-image: url("../images/bg2.png");
+          background-position: center;
+          background-repeat: no-repeat; }
       .section-container #about {
-        min-width: 1280px; }
+        min-width: 1280px;
+        padding-right: 480px; }
+        .section-container #about .bg-img {
+          background-image: url("../images/bg4.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 100vh;
+          position: absolute;
+          top: 0;
+          right: -0px;
+          width: 500px; }
+      .section-container #photos {
+        min-width: 960px; }
+        .section-container #photos a {
+          margin-right: 16px; }
+          .section-container #photos a img:hover {
+            -webkit-filter: sepia(0.2) saturate(0.5); }
       .section-container #videos {
         min-width: 960px; }
       .section-container #friends {
         min-width: 960px; }
       .section-container .section-content {
         padding-top: 64px;
-        height: 75vh; } }
+        height: 75vh; }
+      .section-container .section-home.--full {
+        height: 100%;
+        padding: 0; }
+        .section-container .section-home.--full > div {
+          height: 100%; } }
   .section-container h2 {
     font-weight: 200;
     font-size: 18px;
