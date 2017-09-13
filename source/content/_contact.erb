@@ -1,0 +1,94 @@
+
+<h2 class="--fancy" data-text="Contact">Contact</h2>
+
+<div class="_padding-bottom-2">
+  <a href="tel:404-435-8008">(404) 435-8008</a> / 
+  <a href="mailto:shannon@circusshannon.com">shannon@circusshannon.com</a>
+</div>
+
+<form id="form_details">
+
+
+
+  <div class="" id="details">
+
+    <div class="_form-section _grid-two">
+        <div class="_form-group">
+          <label for="name" class="control-label">Name</label>
+          <input id="name" type="text" name="name" placeholder='Alex Jones' class="form-control" />
+        </div>
+        <div class="_form-group">
+          <label for="email" class="control-label">Email</label>
+          <input id="email" type="email" name="email" placeholder='alex.jones@gmail.com' class="form-control" />
+        </div>
+    </div>
+
+    <div class="_form-section _grid-one">
+      <div class="_form-group">
+        <label for="formMessage" class="control-label">Message</label>
+        <textarea id="formMessage" name="formMessage" rows="4" cols="50" placeholder="Ask me anything!"></textarea>
+      </div>
+    </div>
+
+    <button class=" _form-send _float-right _button _button-outline _margin-none _margin-right">
+      Send Message
+    </button>
+</form>
+
+
+  <script>
+
+  $(document).ready(function() {
+
+    console.log('init form validation')
+    let rules = {
+      name: {
+        required: true,
+      },
+      email: {
+        required: true,
+      },
+      formMessage: {
+        required: true,
+      },
+    };
+    let messages = {
+      name: {
+        required: 'What’s your name?',
+      },
+      email: {
+        required: 'Email please!',
+      },
+      formMessage: {
+        required: 'Please add a message!',
+      },
+    };
+
+    $('#form_details').validate({
+        rules,
+        messages,
+        submitHandler() {
+          console.log('submitting...')
+        },
+        invalidHandler(event, validator) { 
+          console.log('form is wrong :(')
+          var errors = validator.numberOfInvalids();
+          if (errors) {
+            var message = errors == 1
+              ? 'You missed 1 field. It has been highlighted'
+              : 'You missed ' + errors + ' fields. They have been highlighted';
+            $("div.error span").html(message);
+            $("div.error").show();
+          } else {
+            $("div.error").hide();
+          }
+
+          console.log(message)
+          // props.onSubmit();
+        },
+      });
+
+  });
+
+  </script>
+

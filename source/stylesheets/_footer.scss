@@ -1,0 +1,33 @@
+
+// 
+//  Standard Footer
+// 
+
+._footer--container {
+
+  display: block;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+
+  background-color: rgba($color-body-bg, 0.72);
+  width: 100%;
+  padding-left: $base;
+  @include screen-sm {
+    position: fixed;
+  }
+}
+
+._footer {
+  @extend ._align-center;
+  // line-height: 0;
+  padding-left: $base;
+  padding-right: $base + $size-left-padding;
+  // background: $color-black;
+  color: $color-copy;
+  font-size: $base - 2px;
+  // padding: $base*2 $base;
+  // height: 10vh;
+  max-height: 15vh;
+  min-height: 10vh;
+}

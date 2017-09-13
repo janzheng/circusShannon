@@ -1,0 +1,16 @@
+
+button, 
+._button {
+  color: $color-gray;
+  border-color: $color-gray;
+  font-size: $font-size;
+
+  &:hover {
+    color: $color-silver;
+    border-color: $color-silver;
+  }
+}
+
+a._button {
+
+}

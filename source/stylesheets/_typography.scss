@@ -1,0 +1,68 @@
+
+// Typography
+
+%font-display {
+  font-family: "Italianno", helvetica, arial, sans-serif;
+}
+
+%font-sans,
+%font-basic,
+%font-body {
+  font-family: "Quattrocento Sans", -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", "Encode Sans", "Open Sans", "Oxygen-Sans", Helvetica, arial, sans-serif;
+}
+
+%font-body {
+  font-size: $base - 1px;
+  line-height: ($base - 1px) * 1.5;
+  font-weight: 400;
+  color: $color-copy;
+}
+
+// most styles inherited from the core
+// these are to adjust for the Quicksand family
+
+h1 {
+  // font-weight: 500;
+  @extend %font-display;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: $base-p6;
+  line-height: $base-p5;
+  @extend %font-display;
+  position: relative;
+
+  &.--fancy:after {
+    content: attr(data-text);
+    display: block;
+    color: lighten($color-body-bg, 2.5);
+    z-index: -1;
+    font-size: $base-p4 + 20;
+    line-height: ($base-p4 + 20) * 1.5;
+    position: absolute;
+    white-space: nowrap;
+    top:  $base;
+    left: $base*2;
+    text-shadow: none;
+  }
+}
+
+h3 {
+    font-size: $base-p4;
+}
+
+// h4 {
+//   font-size: $base * 1.5;
+//   font-weight: 700;
+//   padding-bottom: $base/2;
+//   @extend %font-display;
+// }
+
+
+
+
+
+
+
+

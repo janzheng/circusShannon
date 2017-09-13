@@ -1,0 +1,42 @@
+
+
+input {
+  background-color: transparent;
+  color: $color-copy;
+  border-color: transparent;
+  border-bottom: solid $border-thin $color-gray;
+  @include input-placeholder {
+    color: $color-gray-dark;
+  }
+  &:focus, &:hover {
+    box-shadow: none;
+    border-color: transparent !important;
+    border-bottom-color: $color-silver  !important;
+    background-color: transparent !important;
+  }
+}
+
+textarea { 
+  background: transparent;
+  outline: solid $border-thin $color-gray;
+  margin-left: 3px; // weird chrome thing
+  color: $color-copy;
+
+  @include input-placeholder {
+    color: $color-gray-dark;
+  }
+
+  &:focus, &:hover {
+    outline: dashed $border-thin $color-silver;
+    background: transparent;
+  }
+}
+
+._form-send {
+  position: relative;
+  right: -3px;
+}
+
+.error {
+  padding-top: $base/2;
+}
