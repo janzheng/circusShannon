@@ -1,32 +1,36 @@
 
-<h2 class="--fancy" data-text="Contact">Contact</h2>
+<h2 class="--fancy" data-text="Contact">Contact &amp; Booking</h2>
 
 <div class="_padding-bottom-2">
   <a href="tel:404-435-8008">(404) 435-8008</a> / 
   <a href="mailto:shannon@circusshannon.com">shannon@circusshannon.com</a>
 </div>
 
+<p>
+  Feel free to send me a message below. I reply fairly quickly. Let me know where you are, and how I help you!
+</p>
+
 <form id="form" action="https://script.google.com/macros/s/AKfycbyXDgzgf3_A3Z4qENnwbcZXXP-dVGg5jGpRo0zv0u5txuwqeTI/exec">
 
-  <div class="_form-section _grid-two">
-      <div class="_form-group">
-        <label for="name" class="control-label">Name</label>
-        <input id="name" type="text" name="name" placeholder='Alex Jones' class="form-control" />
-      </div>
-      <div class="_form-group">
-        <label for="email" class="control-label">Email</label>
-        <input id="email" type="email" name="email" placeholder='alex.jones@gmail.com' class="form-control" />
-      </div>
+  <div class="_form-control _grid-two">
+    <div class="_form-control">
+      <label for="name" class="_form-label">Name</label>
+      <input id="name" type="text" name="name" placeholder='Alex Jones' class="form-control" />
+    </div>
+    <div class="_form-group">
+      <label for="email" class="_form-label">Email</label>
+      <input id="email" type="email" name="email" placeholder='alex.jones@gmail.com' class="form-control" />
+    </div>
   </div>
 
-  <div class="_form-section _grid-one">
+  <div class="_form-control _grid-one">
     <div class="_form-group">
-      <label for="message" class="control-label">Message</label>
+      <label for="message" class="_form-label">Message</label>
       <textarea id="message" name="message" rows="4" cols="50" placeholder="Ask me anything!"></textarea>
     </div>
   </div>
 
-  <button class=" _form-send _float-right _button _button-outline _margin-none _margin-right">
+  <button class="_button _form-send _float-right _button _button-outline _margin-none _margin-right">
     Send Message
   </button>
 </form>

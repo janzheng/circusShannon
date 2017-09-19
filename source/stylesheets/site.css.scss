@@ -109,9 +109,9 @@ body {
     display: grid;
     // grid-gap: $base * 18;
     grid-gap: 25%;
-    grid-template-areas:   'home about photos videos booking contact friends';
+    grid-template-areas:   'home about photos videos booking contact affiliates';
     grid-template-rows:    1fr;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
     // align-items: center; // vertical middle of grid
     height: 100vh;
@@ -120,7 +120,7 @@ body {
       display: inline-block;
       // min-height: 100vh;
       max-height: 100vh;
-      overflow-y: scroll;
+      overflow-y: hidden;
       overflow-x: hidden;
       padding-right: $base * 3; // give scroller space
       padding-bottom: $base * 8; // to avoid footer overlap
@@ -152,10 +152,37 @@ body {
           width: 500px;
         }
       }
+      #writings {
+        // min-width: $width-magic * 1.5;
+      }
+      #events {
+        min-width: $width-magic * 2.5;
+
+        .event {
+          margin-bottom: $base*4;
+        }
+        .--sm {
+          h5 {
+            // padding: 0 !important;
+          }
+        }
+      }
+      #instruction {
+        min-width: $width-magic * 2;
+      }
       #photos { 
         min-width: $width-magic * 1.5;
 
+        figure {
+          display: block;
+          float: left;
+          margin: 0 5px 5px 0;
+          width: 150px;
+        }
+
         a {
+          text-decoration: none;
+          border: none;
           margin-right: $base;
           img:hover {
             -webkit-filter: sepia(0.2) saturate(0.5);
@@ -163,9 +190,14 @@ body {
         }
       }
       #videos { 
-        min-width: $width-magic * 3/2;
+        min-width: $width-magic * 2;
+        a {
+          img:hover {
+            -webkit-filter: sepia(0.2) saturate(0.5);
+          }
+        }
       }
-      #friends {
+      #affiliates {
         min-width: $width-magic * 3/2;
         // some space to the right
       }
@@ -186,7 +218,6 @@ body {
     }
   }
 
-  counter-reset: header;
   h2 {
     @extend %font-sans;
     font-weight: 200;
@@ -195,14 +226,8 @@ body {
     letter-spacing: 6px;
     line-height: 67px;
     position: relative;
-    counter-increment: header;
     @extend %glow;
 
-    &:before { 
-      letter-spacing: 0;
-      padding-right: $base/2;
-      content: '0' counter(header) '. '; 
-    }
   }
 
 }

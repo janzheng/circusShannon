@@ -52,6 +52,16 @@ h3 {
     font-size: $base-p4;
 }
 
+h5 {
+  font-weight: 200;
+  font-size: $base;
+  line-height: $base-p1;
+  @extend %font-sans;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 // h4 {
 //   font-size: $base * 1.5;
 //   font-weight: 700;

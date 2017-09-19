@@ -1,33 +1,36 @@
 
 
+$color-form-border: $color-gray;
+$color-placeholder: $color-gray-dark;
+
 input {
   background-color: transparent;
   color: $color-copy;
   border-color: transparent;
-  border-bottom: solid $border-thin $color-gray;
+  border-bottom: solid $border-thin $color-form-border;
   @include input-placeholder {
-    color: $color-gray-dark;
+    color: $color-placeholder;
   }
   &:focus, &:hover {
     box-shadow: none;
     border-color: transparent !important;
-    border-bottom-color: $color-silver  !important;
+    border-bottom-color: $color-active  !important;
     background-color: transparent !important;
   }
 }
 
 textarea { 
   background: transparent;
-  outline: solid $border-thin $color-gray;
+  outline: solid $border-thin $color-form-border;
   margin-left: 3px; // weird chrome thing
   color: $color-copy;
 
   @include input-placeholder {
-    color: $color-gray-dark;
+    color: $color-placeholder;
   }
 
   &:focus, &:hover {
-    outline: dashed $border-thin $color-silver;
+    outline: dashed $border-thin $color-active;
     background: transparent;
   }
 }

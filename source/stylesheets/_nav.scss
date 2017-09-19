@@ -41,12 +41,10 @@ $glass: rgba($color-body-bg, 0.8);
   }
 }
 ._nav {
-  // position: relative;
   margin: 0;
   top: 28vh; 
   opacity: 0;
   @extend %ease;
-  counter-reset: nav;
   z-index: 300;
   position: relative;
   display: inline-block;
@@ -54,12 +52,8 @@ $glass: rgba($color-body-bg, 0.8);
   @extend %ease-slow;
 
   @include screen-xs {
-    // padding: $base*2;
     width: 100%;
     padding-top: $base*4;
-    a { 
-      // display: block;
-    }
   }
 
   @include screen-sm {
@@ -70,7 +64,6 @@ $glass: rgba($color-body-bg, 0.8);
     }
   }
 
-
   .nav-links {
     padding-top: $base;
     
@@ -78,15 +71,6 @@ $glass: rgba($color-body-bg, 0.8);
       text-transform: uppercase;
       letter-spacing: 1.2px;
       font-size: 13px;
-    }
-
-    a:before  {
-      counter-increment: nav;
-      content: '0' counter(nav) '.'; 
-      padding-right: $base/4;
-      // text-align: right;
-      display: inline-block;
-      width: 30px;
     }
 
     @include screen-xs {
@@ -99,6 +83,12 @@ $glass: rgba($color-body-bg, 0.8);
         top: 0 !important;
       }
       #nav-tr {
+      }
+    }
+
+    @include screen-sm {
+      .nav-hr {
+        border-color: $color-gray-dark;
       }
     }
   }
