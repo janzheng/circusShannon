@@ -137,6 +137,10 @@ body {
           background-repeat: no-repeat;
         }
       }
+      #photos { 
+        min-width: $width-magic * 1.5;
+      }
+
       #about { 
         min-width: $width-magic * 2;
         padding-right: $base * 30;
@@ -170,25 +174,6 @@ body {
       #instruction {
         min-width: $width-magic * 2;
       }
-      #photos { 
-        min-width: $width-magic * 1.5;
-
-        figure {
-          display: block;
-          float: left;
-          margin: 0 5px 5px 0;
-          width: 150px;
-        }
-
-        a {
-          text-decoration: none;
-          border: none;
-          margin-right: $base;
-          img:hover {
-            -webkit-filter: sepia(0.2) saturate(0.5);
-          }
-        }
-      }
       #videos { 
         min-width: $width-magic * 2;
         a {
@@ -218,6 +203,13 @@ body {
     }
   }
 
+
+  .event {
+    margin-bottom: $base*4;
+  }
+
+
+
   h2 {
     @extend %font-sans;
     font-weight: 200;
@@ -245,8 +237,35 @@ a[rel='lightbox'] {
 }
 
 
-.video img {
-  width: 100%;
+#photos { 
+  @include screen-xs {
+    min-width: 320px;
+    max-width: 100%;
+  }
+
+  figure {
+    display: block;
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 150px;
+  }
+
+  a {
+    text-decoration: none;
+    border: none;
+    margin-right: $base;
+    img:hover {
+      -webkit-filter: sepia(0.2) saturate(0.5);
+    }
+  }
+}
+
+.video {
+  margin-bottom: $base*2;
+  img {
+    width: 100%;
+    max-width: 480px;
+  }
 }
 
 

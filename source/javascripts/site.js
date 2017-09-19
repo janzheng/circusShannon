@@ -97,7 +97,7 @@ function resize() {
 
     // size adjustments
     if (windowHeight < 580 ) {
-      console.log('changes...')
+      // console.log('changes...')
       $('.section-content').css({'padding-top':'0px', 'overflow-y':'scroll', 'height': '100vh'})
       $('._footer').hide();
 
