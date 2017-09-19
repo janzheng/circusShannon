@@ -13,7 +13,7 @@ Error: Undefined variable: "$color-whitest".
 41: @import 'components/sidebar'; 
 42: @import 'components/forms'; 
 43: @import 'components/styleguide'; 
-44: 
+44: @import 'components/tabs'; 
 
 Backtrace:
 /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_buttons.scss:39
@@ -145,4 +145,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-whitest\".\A         on line 39 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_buttons.scss\A         from line 27 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/index.scss\A \A 34: //  The Components \A 35: //  [ larger components that will be most likely overridden ]\A 36: // \A 37: \A 38: // @import 'components/index';\A 39: @import 'components/footer'; \A 40: @import 'components/nav'; \A 41: @import 'components/sidebar'; \A 42: @import 'components/forms'; \A 43: @import 'components/styleguide'; \A 44: "; }
+  content: "Error: Undefined variable: \"$color-whitest\".\A         on line 39 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_buttons.scss\A         from line 27 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/index.scss\A \A 34: //  The Components \A 35: //  [ larger components that will be most likely overridden ]\A 36: // \A 37: \A 38: // @import 'components/index';\A 39: @import 'components/footer'; \A 40: @import 'components/nav'; \A 41: @import 'components/sidebar'; \A 42: @import 'components/forms'; \A 43: @import 'components/styleguide'; \A 44: @import 'components/tabs'; "; }

@@ -13,7 +13,7 @@ Error: Undefined variable: "$color-black".
 9: @import 'nav'; 
 10: @import 'sidebar'; 
 11: @import 'forms'; 
-12: @import 'styleguide';
+12: @import 'styleguide'; 
 
 Backtrace:
 /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/components/_footer.scss:7
@@ -156,4 +156,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-black\".\A         on line 7 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/components/_footer.scss\A         from line 8 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/components/index.scss\A \A 2: \A 3: // \A 4: //  The Components \A 5: //  [ larger components that will be most likely overridden ]\A 6: // \A 7: \A 8: @import 'footer'; \A 9: @import 'nav'; \A 10: @import 'sidebar'; \A 11: @import 'forms'; \A 12: @import 'styleguide';"; }
+  content: "Error: Undefined variable: \"$color-black\".\A         on line 7 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/components/_footer.scss\A         from line 8 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/components/index.scss\A \A 2: \A 3: // \A 4: //  The Components \A 5: //  [ larger components that will be most likely overridden ]\A 6: // \A 7: \A 8: @import 'footer'; \A 9: @import 'nav'; \A 10: @import 'sidebar'; \A 11: @import 'forms'; \A 12: @import 'styleguide'; "; }
