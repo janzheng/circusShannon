@@ -1481,6 +1481,8 @@ input, .input, textarea, .textarea {
 
 ._form-label {
   padding-bottom: 4px; }
+  ._form-label[for=message] {
+    padding-bottom: 8px; }
 
 ._form-label-icon {
   display: inline-block;
@@ -2125,6 +2127,8 @@ body {
           background-image: url("../images/bg2.png");
           background-position: center;
           background-repeat: no-repeat; }
+      .section-container #photos {
+        min-width: 960px; }
       .section-container #about {
         min-width: 1280px;
         padding-right: 480px; }
@@ -2143,19 +2147,6 @@ body {
           margin-bottom: 64px; }
       .section-container #instruction {
         min-width: 1280px; }
-      .section-container #photos {
-        min-width: 960px; }
-        .section-container #photos figure {
-          display: block;
-          float: left;
-          margin: 0 5px 5px 0;
-          width: 150px; }
-        .section-container #photos a {
-          text-decoration: none;
-          border: none;
-          margin-right: 16px; }
-          .section-container #photos a img:hover {
-            -webkit-filter: sepia(0.2) saturate(0.5); }
       .section-container #videos {
         min-width: 1280px; }
         .section-container #videos a img:hover {
@@ -2170,6 +2161,8 @@ body {
         padding: 0; }
         .section-container .section-home.--full > div {
           height: 100%; } }
+  .section-container .event {
+    margin-bottom: 64px; }
   .section-container h2 {
     font-weight: 200;
     font-size: 18px;
@@ -2188,5 +2181,24 @@ a[rel='lightbox'] {
     ._footer {
       padding-left: 16px; } }
 
-.video img {
-  width: 100%; }
+@media (max-width: 767px) {
+  #photos {
+    min-width: 320px;
+    max-width: 100%; } }
+#photos figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 150px; }
+#photos a {
+  text-decoration: none;
+  border: none;
+  margin-right: 16px; }
+  #photos a img:hover {
+    -webkit-filter: sepia(0.2) saturate(0.5); }
+
+.video {
+  margin-bottom: 32px; }
+  .video img {
+    width: 100%;
+    max-width: 480px; }
