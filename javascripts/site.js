@@ -83,7 +83,7 @@ function resize() {
   console.log('window height/width: ' + windowHeight + ' | ' + windowWidth);
 
   // reset
-  $('.section-content').css({'padding-top':'32px'})
+  // $('.section-content').css({'padding-top':'32px'})
   $('._footer').show();
 
   if(isMobile || $(window).width() < 768 ) {
@@ -96,10 +96,11 @@ function resize() {
     $('._nav').offset({top: windowHeight/2 - $('._nav').outerHeight()/2});
 
     // size adjustments
-    if (windowHeight < 580 ) {
+    if (windowHeight < 800 ) {
       // console.log('changes...')
-      $('.section-content').css({'padding-top':'0px', 'overflow-y':'scroll', 'height': '100vh'})
-      $('._footer').hide();
+       $('.section-content').addClass('--tooHigh');
+      // $('.section-content').css({'padding-top':'0px', 'overflow-y':'scroll', 'overflow-x':'hidden', 'height': '100vh'})
+      // $('._footer').hide();
 
 
     }

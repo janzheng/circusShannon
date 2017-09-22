@@ -1,33 +1,23 @@
 /*
-Error: Undefined variable: "$base".
-        on line 14 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_styles.scss
-        from line 7 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/index.scss
+Error: Undefined variable: "$color-copy".
+        on line 3 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_links.scss
+        from line 8 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/index.scss
 
-9: @import 'buttons'; 
-10: @import 'message'; 
-11: @import 'card'; 
-12: @import 'layout';
-13: @import 'code';
+1: 
+2: // 
+3: //  The Vessels.
+4: //  [ dependent on heart and arteries ]
+5: // 
+6: 
+7: @import 'styles';
+8: @import 'links'; 
 
 Backtrace:
-/Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_styles.scss:14
-/Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/index.scss:7
+/Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_links.scss:3
+/Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/index.scss:8
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/script/tree/node.rb:58:in `perform'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/script/tree/operation.rb:67:in `_perform'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/script/tree/node.rb:58:in `perform'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
+/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:472:in `visit_variable'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
@@ -152,4 +142,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$base\".\A         on line 14 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_styles.scss\A         from line 7 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/index.scss\A \A 9: @import 'buttons'; \A 10: @import 'message'; \A 11: @import 'card'; \A 12: @import 'layout';\A 13: @import 'code';"; }
+  content: "Error: Undefined variable: \"$color-copy\".\A         on line 3 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/_links.scss\A         from line 8 of /Users/janzheng/Desktop/projects/circusShannon/source/stylesheets/stylecoeur/vessels/index.scss\A \A 1: \A 2: // \A 3: //  The Vessels.\A 4: //  [ dependent on heart and arteries ]\A 5: // \A 6: \A 7: @import 'styles';\A 8: @import 'links'; "; }
