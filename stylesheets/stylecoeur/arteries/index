@@ -82,6 +82,8 @@ Backtrace:
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/rack-2.0.3/lib/rack/urlmap.rb:68:in `block in call'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/rack-2.0.3/lib/rack/urlmap.rb:53:in `each'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/rack-2.0.3/lib/rack/urlmap.rb:53:in `call'
+/Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/middleman-core-4.2.1/lib/middleman-core/extensions/minify_css.rb:63:in `call'
+/Users/janzheng/.rvm/gems/ruby-2.4.1/gems/htmlcompressor-0.2.0/lib/htmlcompressor/rack.rb:36:in `call'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/middleman-core-4.2.1/lib/middleman-core/core_extensions/inline_url_rewriter.rb:74:in `call'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/rack-2.0.3/lib/rack/head.rb:12:in `call'
 /Users/janzheng/.rvm/gems/ruby-2.4.1@global/gems/rack-2.0.3/lib/rack/lint.rb:49:in `_call'
