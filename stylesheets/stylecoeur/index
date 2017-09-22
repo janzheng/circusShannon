@@ -1099,20 +1099,23 @@ p {
     grid-template-rows: 1fr;
     grid-template-columns: 7fr 1fr; } }
 
-._grid-one-six-one {
-  grid-template-areas: "one six one";
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 6fr 1fr; }
+@media (min-width: 768px) {
+  ._grid-one-six-one {
+    grid-template-areas: "one six one";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 6fr 1fr; } }
 
-._grid-two-one-one {
-  grid-template-areas: "two one one";
-  grid-template-rows: 1fr;
-  grid-template-columns: 2fr 1fr 1fr; }
+@media (min-width: 768px) {
+  ._grid-two-one-one {
+    grid-template-areas: "two one one";
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr 1fr; } }
 
-._grid-two-two-one {
-  grid-template-areas: "two two one";
-  grid-template-rows: 1fr;
-  grid-template-columns: 2fr 2fr 1fr; }
+@media (min-width: 768px) {
+  ._grid-two-two-one {
+    grid-template-areas: "two two one";
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 2fr 1fr; } }
 
 /* 
       - Grids work with the 'display: grid' 
