@@ -73,6 +73,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     padding-bottom: $base*6;
+    padding-top: $base*3;
 
     section {
       padding: $base*2;
@@ -285,6 +286,12 @@ a[rel='lightbox'] {
 .event {
   border: $border-thin solid $color-gray-dark;
   padding: $base;
+}
+
+
+
+.scrollmagic-pin-spacer {
+  left: 0 !important;
 }
 
 

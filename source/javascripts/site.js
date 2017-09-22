@@ -137,7 +137,7 @@ $(document).ready(function() {
   var stickyController = new ScrollMagic.Controller();
 
   // sticky nav
-  var nav = new ScrollMagic.Scene({triggerElement: "#nav", triggerHook: "onLeave"})
+  var nav = new ScrollMagic.Scene({triggerElement: "#nav-tr", triggerHook: "onLeave"})
           .setPin("#nav")
           .setClassToggle("#nav", "--pinned") // add class toggle
           .addTo(stickyController);
