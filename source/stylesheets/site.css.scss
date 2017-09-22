@@ -138,7 +138,7 @@ body {
         }
       }
       #photos { 
-        min-width: $width-magic * 1.5;
+        min-width: $width-magic * 4;
       }
 
       #about { 
@@ -160,10 +160,11 @@ body {
         // min-width: $width-magic * 1.5;
       }
       #events {
-        min-width: $width-magic * 2.5;
+        min-width: $width-magic * 2.6;
 
         .event {
-          margin-bottom: $base*4;
+          margin-bottom: $base;
+
         }
         .--sm {
           h5 {
@@ -172,7 +173,10 @@ body {
         }
       }
       #instruction {
-        min-width: $width-magic * 2;
+        min-width: $width-magic * 3;
+      }
+      #performance {
+        min-width: $width-magic * 1.5;
       }
       #videos { 
         min-width: $width-magic * 2;
@@ -188,8 +192,17 @@ body {
       }
 
     .section-content {
-      padding-top: $base*4;
+      // padding-top: $base*4;
       height: 75vh; // for large bg images
+      padding: $base;
+
+      &.--tooHigh {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 100vh;
+        padding-bottom: $base*6;
+        padding-top: 0px;
+      }
     }
 
     .section-home {
@@ -202,12 +215,6 @@ body {
       }
     }
   }
-
-
-  .event {
-    margin-bottom: $base*4;
-  }
-
 
 
   h2 {
@@ -238,6 +245,13 @@ a[rel='lightbox'] {
 
 
 #photos { 
+  // photo limits
+  // thumb
+  img {
+    height: 120px;
+    width: auto;
+  }
+
   @include screen-xs {
     min-width: 320px;
     max-width: 100%;
@@ -247,7 +261,7 @@ a[rel='lightbox'] {
     display: block;
     float: left;
     margin: 0 5px 5px 0;
-    width: 150px;
+    // width: 150px;
   }
 
   a {
@@ -266,6 +280,11 @@ a[rel='lightbox'] {
     width: 100%;
     max-width: 480px;
   }
+}
+
+.event {
+  border: $border-thin solid $color-gray-dark;
+  padding: $base;
 }
 
 

@@ -46,6 +46,7 @@ Deploying to Github uses [middleman deploy](https://github.com/middleman-contrib
   bundle exec middleman build [--clean]
   bundle exec middleman deploy [--build-before]
 ~~~
+
 ## Design
 
 The main `circusshannon.com` site is horizontally scrolling, which isn't really good for mobile sites. Instead, any screens -sm and above will be horizontally scrolling, while -xs will become vertically scrolling. Grids can support this kind of reflowing.

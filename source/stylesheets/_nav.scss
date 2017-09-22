@@ -3,6 +3,7 @@
   display: block;
   @extend %glow;
   @extend %font-display;
+  // font-family: "Italianno", helvetica, arial, sans-serif;
   font-size: $base-p5;
   position: relative;
   padding-bottom: $base * 2;

@@ -1,15 +1,16 @@
 
 // Typography
 
-%font-display {
-  font-family: "Italianno", helvetica, arial, sans-serif;
-}
-
 %font-sans,
 %font-basic,
 %font-body {
   font-family: "Quattrocento Sans", -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", "Encode Sans", "Open Sans", "Oxygen-Sans", Helvetica, arial, sans-serif;
 }
+
+%font-display { // needs to be below font-body
+  font-family: "Italianno", helvetica, arial, sans-serif;
+}
+
 
 %font-body {
   font-size: $base - 1px;
