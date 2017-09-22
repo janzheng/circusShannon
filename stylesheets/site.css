@@ -2185,7 +2185,8 @@ body {
     .section-container {
       width: 100%;
       overflow-x: hidden;
-      padding-bottom: 96px; }
+      padding-bottom: 96px;
+      padding-top: 48px; }
       .section-container section {
         padding: 32px;
         padding-top: 48px; }
@@ -2315,3 +2316,6 @@ a[rel='lightbox'] {
 .event {
   border: 2px solid #3A3A3A;
   padding: 16px; }
+
+.scrollmagic-pin-spacer {
+  left: 0 !important; }
