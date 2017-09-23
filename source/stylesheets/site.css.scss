@@ -165,8 +165,8 @@ body {
         max-width: calc(70vw - 170px);
 
         &.--short {
-          min-width: calc(30vw);
-          max-width: calc(30vw);
+          min-width: calc(0vw);
+          max-width: calc(0vw);
         }
       }
 
