@@ -93,21 +93,24 @@ function resize() {
   // reset
   // $('.section-content').css({'padding-top':'32px'})
   $('._footer').show();
+  $('._nav-footer').show();
 
   if(isMobile || $(window).width() < 768 ) {
     console.log('mobile view');
     verticalScroll();
     $('.section-container').scrollLeft(0); // reset left/right scroll
+    $('._nav-footer').hide();
   } else {
     horizontalScroll();
     $('._nav').offset({top: windowHeight/2 - $('._nav').outerHeight()/2});
+    $('._footer').hide();
 
     // size adjustments
     if (windowHeight < 600 ) {
       // console.log('changes...')
        $('.section-content').addClass('--tooHigh');
       // $('.section-content').css({'padding-top':'0px', 'overflow-y':'scroll', 'overflow-x':'hidden', 'height': '100vh'})
-      $('._footer').hide();
+      // $('._footer').hide();
 
 
     }
