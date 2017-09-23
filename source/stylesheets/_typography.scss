@@ -13,8 +13,8 @@
 
 
 %font-body {
-  font-size: $base - 1px;
-  line-height: ($base - 1px) * 1.5;
+  font-size: $base + 0px;
+  line-height: ($base + 2px) * 1.5;
   font-weight: 400;
   color: $color-copy;
 }

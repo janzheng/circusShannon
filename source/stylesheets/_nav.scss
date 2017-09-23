@@ -7,6 +7,8 @@
   font-size: $base-p5;
   position: relative;
   padding-bottom: $base * 2;
+  padding-left: $base/2;
+
   .sh {
     display: block;
     position: relative;
@@ -31,9 +33,9 @@ $glass: rgba($color-body-bg, 0.8);
   @include screen-sm {
     z-index: 100;
     background-color: $glass;
-    padding-left: $size-left-padding;
+    // padding-left: $size-left-padding;
     position: fixed;
-    width: 270px; //30vw;
+    width: 260px; //30vw;
     height: 100vh;
 
     a {

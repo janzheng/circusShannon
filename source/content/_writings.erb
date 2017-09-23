@@ -32,7 +32,6 @@ $(function () {
       var output = '';
       $.each(response.items, function (i, item) {
         if (i < 3) {
-          console.log(item);
           output += '<div class="_margin-bottom-2">';
           output += '<div class="blog-post"><header>';
           output += '<div class="_font-smaller">' + $.format.date(item.pubDate, "dd MMMM, yyyy") + "</div>";

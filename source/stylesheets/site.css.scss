@@ -17,6 +17,7 @@
   $color-orange:          #FBC547;  ._color-bg-orange { background-color: $color-orange } 
 
   $color-body-bg: $color-blacker;
+  $color-body-content: $color-black;
   $color-body: $color-silver-dark;
   $color-copy: $color-silver-dark;
   $color-hover: $color-teal;
@@ -51,6 +52,10 @@ $size-left-padding: $base;
 @import 'forms';
 
 
+
+%body-width {
+  min-width: calc(100vw - 260px);
+}
 
 // 
 // base layout styles
@@ -99,6 +104,9 @@ body {
         opacity: 0.14;
       }
     }
+    #about {
+      padding-top: 120px;
+    }
   }
 
 
@@ -112,20 +120,20 @@ body {
     grid-gap: 25%;
     grid-template-areas:   'home about photos videos booking contact affiliates';
     grid-template-rows:    1fr;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
+    grid-template-columns: repeat(18, 1fr);
     // align-items: center; // vertical middle of grid
     height: 100vh;
 
     section {
       display: inline-block;
       // min-height: 100vh;
-      max-height: 100vh;
+      // max-height: 100vh;
       overflow-y: hidden;
       overflow-x: hidden;
       padding-right: $base * 3; // give scroller space
       padding-bottom: $base * 8; // to avoid footer overlap
       position: relative;
+      padding-top: 0;
 
       min-width: $width-magic - 180;
     }
@@ -139,29 +147,37 @@ body {
         }
       }
       #photos { 
-        min-width: $width-magic * 4;
+        // min-width: $width-magic * 2;
       }
 
       #about { 
-        min-width: $width-magic * 2;
-        padding-right: $base * 30;
+        // min-width: $width-magic * 2;
+        // padding-right: $base * 30;
 
-        .bg-img {
-          background-image: url('../images/bg4.png');
-          background-position: center;
-          background-repeat: no-repeat;
-          height: 100vh;
-          position: absolute;
-          top: 0;
-          right: -0px;
-          width: 500px;
-        }
       }
+
+      .section-divider {
+        // width: 100vw;
+        min-width: calc(100vw - 340px)/2;
+        max-width: calc(100vw - 340px)/2;
+      }
+
+      .bg-img.--two {
+        background-image: url('../images/bg4.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 800px;
+        position: relative;
+        // top: 0;
+        left: -130px;
+      }
+
       #writings {
         // min-width: $width-magic * 1.5;
       }
       #events {
-        min-width: $width-magic * 2.6;
+        // min-width: $width-magic * 2.6;
 
         .event {
           margin-bottom: $base;
@@ -174,13 +190,13 @@ body {
         }
       }
       #instruction {
-        min-width: $width-magic * 3;
+        // min-width: $width-magic * 3;
       }
       #performance {
-        min-width: $width-magic * 1.5;
+        // min-width: $width-magic * 1.5;
       }
       #videos { 
-        min-width: $width-magic * 2;
+        // min-width: $width-magic * 2;
         a {
           img:hover {
             -webkit-filter: sepia(0.2) saturate(0.5);
@@ -188,14 +204,25 @@ body {
         }
       }
       #affiliates {
-        min-width: $width-magic * 3/2;
+        // min-width: $width-magic * 3/2;
         // some space to the right
       }
 
     .section-content {
       // padding-top: $base*4;
-      height: 75vh; // for large bg images
-      padding: $base;
+      height: 100vh; // for large bg images
+      padding: $base*2;
+      padding-bottom: $base*8;
+      // @extend %body-width;
+
+      &.--scroll {
+        min-width: calc(100vw - 340px);
+        max-width: calc(100vw - 340px);
+        // border: 1px solid #444;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: $color-body-content;
+      }
 
       &.--tooHigh {
         overflow-y: scroll;
@@ -256,25 +283,40 @@ a[rel='lightbox'] {
   @include screen-xs {
     min-width: 320px;
     max-width: 100%;
+
+    img {
+      height: 148px;
+      margin-right: $base/2;
+    }
   }
 
   figure {
     display: block;
     float: left;
-    margin: 0 5px 5px 0;
+    // margin: 0 5px 5px 0;
     // width: 150px;
   }
 
   a {
     text-decoration: none;
     border: none;
-    margin-right: $base;
+    // margin-right: $base;
     img:hover {
       -webkit-filter: sepia(0.2) saturate(0.5);
     }
   }
 
   .gallery {
+
+    @include screen-xs {
+      width: 100%;
+      display: block;
+    }
+
+    @extend %gr;
+    @include screen-sm {
+      @include griddick("five five five five five", 5);
+    }
     figcaption {
       display: none;
     }

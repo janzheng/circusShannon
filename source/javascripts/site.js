@@ -1,6 +1,10 @@
 
 
 
+var nav_width = 260;
+
+
+
 var isMobile = false;
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   isMobile = true;
@@ -17,8 +21,8 @@ function hScroll(target) {
   var scrollElement = '.section-container';
 
   $target = $(target);
-  // offset = $this.data('offset-scroll') || 0; // <... data-offset-scroll="400"> 
   targetOffset = $target.offset().left;
+  // offset = $this.data('offset-scroll-h') || 0; // <... data-offset-scroll="400"> 
   offset = -300;
 
   // console.log('start hScroll to ' , target)
@@ -54,19 +58,21 @@ function verticalScroll() {
     var target = this.hash,
         $target = $(target),
         targetOffset = $target.offset().top,
-        offset = 0; //-70;
+        // offset = 0; //-70;
+        // offset = $(this).data('offset-scroll-v') || 0; // <... data-offset-scroll="400"> 
+        offset = -120;
 
     // console.log('start vScroll')
 
     if( typeof $target.offset() !== "undefined") {
-      // window.location.hash = target;
       $(scrollElement).animate({
         'scrollTop': $target.offset().top + offset
       }, 600, 'swing', function() {
-        event.preventDefault();
-        window.location.hash = target;
-        event.preventDefault();
-        console.log('finished vScroll')
+        // $target.css({'position':'relative', 'top':0-offset})
+        var scrollTop = $(window).scrollTop();
+        event.preventDefault(); // tends to jump
+        // console.log('finished vScroll', $(window).scrollTop())
+        $(window).scrollTop(scrollTop) // prevents jumping
       });
     }
   });
@@ -121,12 +127,12 @@ $(document).ready(function() {
 
   // horizontally scroll if hash exists
 
-  let hash = location.hash;
-  console.log(hash);
+  let hash = location.hash.substring(0,location.hash.indexOf('&')||0);
+  console.log('hash:', hash);
 
   if(hash !== '') {
     console.log('hash scroll horizontally');
-    hScroll(hash);
+    // hScroll(hash);
   }
 
   // 
@@ -149,7 +155,11 @@ $(document).ready(function() {
 });
 
 
-jQuery(window).on('resize', _.throttle(resize, 500));
+$(window).on('resize', _.throttle(resize, 500));
+// $(window).on('hashchange', function(event) {
+//   console.log('hash change: ', event)
+//   event.preventDefault();
+// });
 
 
 
@@ -212,7 +222,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             if(linkEl.children.length > 0) {
                 // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
+                // item.msrc = linkEl.children[0].getAttribute('src');
             } 
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
@@ -321,7 +331,10 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                     rect = thumbnail.getBoundingClientRect(); 
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
+            },
+
+            showHideOpacity: true, 
+            getThumbBoundsFn: false
 
         };
 
