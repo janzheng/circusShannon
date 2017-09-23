@@ -82,6 +82,8 @@ function verticalScroll() {
 
 
 function resize() {
+  $('._nav').offset({top: 0});
+
   var windowHeight = $(window).height();
   windowWidth = $(window).width();
   $("a[href^='#'], html, body").unbind();
@@ -95,7 +97,6 @@ function resize() {
   if(isMobile || $(window).width() < 768 ) {
     console.log('mobile view');
     verticalScroll();
-    $('._nav').offset({top: 0});
     $('.section-container').scrollLeft(0); // reset left/right scroll
   } else {
     horizontalScroll();
