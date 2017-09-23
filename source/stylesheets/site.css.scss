@@ -148,6 +148,9 @@ body {
       }
       #photos { 
         // min-width: $width-magic * 2;
+       // &, .section-content {
+       //    min-width: 790px;
+       //  }
       }
 
       #about { 
@@ -276,8 +279,10 @@ a[rel='lightbox'] {
   // photo limits
   // thumb
   img {
-    height: 120px;
+    // height: 120px;
+    height: 148px;
     width: auto;
+    margin-right: $base/2;
   }
 
   @include screen-xs {
@@ -285,8 +290,7 @@ a[rel='lightbox'] {
     max-width: 100%;
 
     img {
-      height: 148px;
-      margin-right: $base/2;
+      // height: 148px;
     }
   }
 
@@ -313,9 +317,9 @@ a[rel='lightbox'] {
       display: block;
     }
 
-    @extend %gr;
+    // @extend %gr;
     @include screen-sm {
-      @include griddick("five five five five five", 5);
+      // @include griddick("five five five five five", 5);
     }
     figcaption {
       display: none;
