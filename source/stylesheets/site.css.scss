@@ -273,6 +273,12 @@ a[rel='lightbox'] {
       -webkit-filter: sepia(0.2) saturate(0.5);
     }
   }
+
+  .gallery {
+    figcaption {
+      display: none;
+    }
+  }
 }
 
 .video {

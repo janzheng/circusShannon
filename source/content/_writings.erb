@@ -1,9 +1,9 @@
 
-<h2 class="--fancy" data-text="Writings">Writings</h2>
+<h2 class="--fancy" data-text="Blog">Blog</h2>
 
 <div class="_grid-one _grid-gap-large">
 
-  <p>Read all my writings on <a href="https://medium.jasonmdesign.com" target="_blank">Medium</a>.</p>
+  <p>Read my full blog on <a href="https://medium.com/@shannonmckenna" target="_blank">Medium</a>.</p>
 
   <div id="medium-content">
   </div>
@@ -25,13 +25,14 @@
 $(function () {
   var $content = $('#medium-content');
   var data = {
-    rss_url: 'https://medium.jasonmdesign.com/feed'
+    rss_url: 'https://medium.com/feed/@shannonmckenna'
   };
   $.get('https://api.rss2json.com/v1/api.json', data, function (response) {
     if (response.status == 'ok') {
       var output = '';
       $.each(response.items, function (i, item) {
         if (i < 3) {
+          console.log(item);
           output += '<div class="_margin-bottom-2">';
           output += '<div class="blog-post"><header>';
           output += '<div class="_font-smaller">' + $.format.date(item.pubDate, "dd MMMM, yyyy") + "</div>";

@@ -96,11 +96,11 @@ function resize() {
     $('._nav').offset({top: windowHeight/2 - $('._nav').outerHeight()/2});
 
     // size adjustments
-    if (windowHeight < 800 ) {
+    if (windowHeight < 600 ) {
       // console.log('changes...')
        $('.section-content').addClass('--tooHigh');
       // $('.section-content').css({'padding-top':'0px', 'overflow-y':'scroll', 'overflow-x':'hidden', 'height': '100vh'})
-      // $('._footer').hide();
+      $('._footer').hide();
 
 
     }
@@ -168,7 +168,7 @@ jQuery(window).on('resize', _.throttle(resize, 500));
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
-  console.log('init gallery');
+  // console.log('init gallery');
 
     // parse slide data (url, title, size ...) from DOM elements 
     // (children of gallerySelector)
@@ -207,6 +207,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             if(figureEl.children.length > 1) {
                 // <figcaption> content
                 item.title = figureEl.children[1].innerHTML; 
+
             }
 
             if(linkEl.children.length > 0) {
