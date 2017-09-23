@@ -22,3 +22,6 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 gem "builder", "~> 3.0"
 
 gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
+
+#https://github.com/middleman/middleman-minify-html
+gem 'middleman-minify-html'

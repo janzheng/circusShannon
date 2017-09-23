@@ -50,6 +50,8 @@ activate :relative_assets
 
 activate :aria_current
 
+activate :minify_html
+
 # activate :blog do |blog|
 #   # This will add a prefix to all links, template references and source paths
 #   # blog.prefix = "blog"
@@ -113,8 +115,9 @@ page "/feed.xml", layout: false
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript
 end
+

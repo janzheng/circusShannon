@@ -43,7 +43,7 @@ h2 {
     line-height: ($base-p4 + 20) * 1.5;
     position: absolute;
     white-space: nowrap;
-    top:  $base;
+    top:  $base*2/3;
     left: $base*2;
     text-shadow: none;
   }
