@@ -2241,9 +2241,7 @@ body {
         background-position: center;
         background-repeat: no-repeat;
         height: 100vh;
-        width: 800px;
-        position: relative;
-        left: -130px; }
+        width: 640px; }
       .section-container #events .event {
         margin-bottom: 16px; }
       .section-container #videos a img:hover {
