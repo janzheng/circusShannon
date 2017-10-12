@@ -1,6 +1,150 @@
 
 
 
+
+// contentful
+
+$(document).ready(function() {
+  var token =     'c51124c5fb953e0175a0e2aa5a8df7aa00d67cb54056a5e2ec3702599ae87ab5', 
+      space_id =  'kcqc0t3fvsn2',
+      content_type = 'event'
+
+  $.ajax({
+    type: 'GET',
+    // url: `https://cdn.contentful.com/spaces/${space_id}/entries?access_token=${token}&content_type=${content_type}`,
+    url: `https://cdn.contentful.com/spaces/${space_id}/entries?access_token=${token}&include=2`, // get all data and sort using js
+    contentType: "application/json",
+    dataType: 'json',
+    success: function(e) {
+
+      console.log('contentful success!', e)
+
+      // sort and pick through items
+      var shannon = {
+            assets: {}, // reference through id
+            events: [],
+            workshops: [],
+            courses: [],
+            instruction:{resume: '', workshops: '', text: '', classes: []},
+            performance: {resume: '', text: ''},
+            about: '',
+            affiliates: '',
+          } 
+
+      // build asset lib
+
+      e.includes.Asset.forEach(function(asset,i) {
+        // console.log(i, asset);
+        shannon.assets[asset.sys.id] = {
+          fields: asset.fields,
+          sys: asset.fields,
+          title: asset.fields.file.title,
+          url: asset.fields.file.url,
+          fileName: asset.fields.file.fileName,
+        }
+      });
+
+      // content items
+      e.items.forEach(function(item,i) {
+        var contentType  = item.sys.contentType.sys.id
+        if(contentType == 'shannonAbout') {
+          shannon.about = item.fields.text; 
+        } 
+
+        else if (contentType == 'shannonEvent') {
+          shannon.events.push(item.fields);
+        } 
+
+        else if (contentType == 'shannonWorkshop') {
+          shannon.workshops.push(item.fields);
+        } 
+
+        else if (contentType == 'shannonInstruction') {
+          shannon.instruction.text = item.fields.text;
+          shannon.instruction.resume = item.fields.resume;
+          shannon.instruction.workshops = item.fields.workshops;
+        } 
+        else if (contentType == 'shannonInstructionClasses') {
+          shannon.instruction.classes.push({title: item.fields.title, description: item.fields.description });
+        } 
+
+        else if (contentType == 'shannonPerformance') {
+          shannon.performance.text = item.fields.text;
+          shannon.performance.resume = item.fields.resume;
+        } 
+
+        else if (contentType == 'shannonAffiliates') {
+          shannon.affiliates = item.fields.text;
+        }
+      });
+
+      console.log('workshops', shannon.workshops);
+
+
+      var converter = new showdown.Converter();
+      // console.log('contentful new data:', shannon)
+
+      // replace content
+      $('#_about').html(converter.makeHtml(shannon.about));
+
+      // events 
+      if(shannon.events.length > 0) {
+        $('#_events').html(''); // clear default values
+        shannon.events.forEach(function(event,i) {
+          $('#_events').append(
+            `<div class="event">
+              <h5 class="event--title ">${event.name}</h5>
+              <div class="event--location _padding-bottom">${converter.makeHtml(event.link)}</div>
+              <div class="event--description">${converter.makeHtml(event.description)}</div>
+              <div class="event--cta">${converter.makeHtml(event.cta)}</div>
+            `);
+        });
+      }
+
+      // events 
+      if(shannon.workshops.length > 0) {
+        $('#_workshops').html(''); // clear default values
+        shannon.workshops.forEach(function(workshop,i) {
+          $('#_workshops').append(
+            `<div class="workshop event --sm">
+              <h5 class="event--title ">${workshop.name}</h5>
+              <h5 class="event--date ">${workshop.dateText}</h5>
+              <div class="event--location _padding-bottom">${converter.makeHtml(workshop.location)}</div>
+              <div class="event--description">${converter.makeHtml(workshop.description)}</div>
+              <div class="event--cta">${converter.makeHtml(workshop.cta)}</div>
+            `);
+        });
+      }
+
+      // instructions / teaching
+      if(shannon.instruction.resume) $('#_instruction-workshops').attr('href', shannon.assets[shannon.instruction.workshops.sys.id].url);
+      if(shannon.instruction.resume) $('#_instruction-resume').attr('href', shannon.assets[shannon.instruction.resume.sys.id].url);
+      $('#_instruction-text').html(converter.makeHtml(shannon.performance.text));
+      if(shannon.instruction.classes) {
+        $('#_instruction-classes').html(''); // clear default values
+        shannon.instruction.classes.forEach(function(_class,i) {
+          $('#_instruction-classes').append(`<div class="_margin-bottom-2 event"> <h5>${_class.title}</h5> ${converter.makeHtml(_class.description)} </div>` );
+        });
+      }
+      
+
+      // performance
+      if(shannon.performance.resume) $('#_performance-resume').attr('href', shannon.assets[shannon.performance.resume.sys.id].url);
+      $('#_performance-text').html(converter.makeHtml(shannon.performance.text));
+
+      $('#_affiliates').html(converter.makeHtml(shannon.affiliates));
+
+    },
+    error: function(e) {
+      console.log('contentful error: ' , e.message);
+    }
+  });
+});
+
+
+
+
+
 var nav_width = 260;
 
 
@@ -389,5 +533,35 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

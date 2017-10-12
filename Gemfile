@@ -25,3 +25,6 @@ gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 
 #https://github.com/middleman/middleman-minify-html
 gem 'middleman-minify-html'
+
+
+
